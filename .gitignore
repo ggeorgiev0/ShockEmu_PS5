@@ -208,4 +208,7 @@ dmypy.json
 
 # Ignore all files generated after a successful build
 iohid_wrap.dylib
-mapKeys.h 
+mapKeys.h
+.build/
+*.crash
+*.profraw
