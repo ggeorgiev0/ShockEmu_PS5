@@ -209,7 +209,7 @@ private func profile(_ source: String) throws -> SEProfile {
 @Test func repositoryProfilesRemainCompatible() throws {
     let repository = URL(fileURLWithPath: #filePath).deletingLastPathComponent()
         .deletingLastPathComponent().deletingLastPathComponent()
-    for name in ["only_keyboard.se", "eldenring.se", "nomanssky.se"] {
+    for name in ["only_keyboard.se", "darktide.se", "nomanssky.se"] {
         _ = try SEProfile(data: Data(contentsOf: repository.appendingPathComponent(name)))
     }
 }

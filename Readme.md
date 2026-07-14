@@ -32,14 +32,14 @@ git clone https://github.com/ggeorgiev0/ShockEmu_PS5.git
 cd ShockEmu_PS5
 swift build -c release
 .build/release/shockemu doctor
-.build/release/shockemu profile validate eldenring.se
+.build/release/shockemu profile validate darktide.se
 ```
 
 Start Remote Play with the verified keyboard-and-mouse profile:
 
 ```zsh
 .build/release/shockemu run \
-  --profile eldenring.se \
+  --profile darktide.se \
   --input-source local \
   --verbose
 ```
@@ -101,9 +101,9 @@ One input can drive several distinct outputs. Exact duplicate lines are ignored 
 
 `mouseLook.minimumMagnitude` radially raises any active mouse movement into a minimum analog-stick range. A value such as `0.85` skips a game's slow-pan range while preserving direction; the default `0` retains fully analog movement.
 
-## Elden Ring controls
+## Warhammer 40,000: Darktide controls
 
-The tuned `eldenring.se` profile uses these mappings:
+The tuned `darktide.se` profile uses these mappings:
 
 | DualShock input | Keyboard or mouse |
 |---|---|
@@ -124,7 +124,7 @@ The tuned `eldenring.se` profile uses these mappings:
 | PS button | P |
 | Share / Touchpad | Unmapped |
 
-Mouse look starts at 25% stick magnitude, uses a base sensitivity of `0.075`, and applies horizontal/vertical multipliers of `2.25`/`1.75`. Final camera speed is intended to be adjusted in Elden Ring. The Y direction is tuned for local AppKit capture.
+Mouse look starts at 25% stick magnitude, uses a base sensitivity of `0.075`, and applies horizontal/vertical multipliers of `2.25`/`1.75`. Final camera speed is intended to be adjusted in Darktide. The Y direction is tuned for local AppKit capture.
 
 While streaming, the cursor is hidden and decoupled from its screen position. Press **Control–Option–M** to release/show it or capture/hide it again. Switching away from Remote Play also restores the cursor automatically.
 
@@ -146,7 +146,7 @@ While streaming, ShockEmu hides and decouples the cursor so mouse deltas continu
 The default `auto` source uses local AppKit events. `local` is the verified mode on this machine. If continuous mouse input proves unavailable, an experimental event-tap fallback is available:
 
 ```zsh
-.build/release/shockemu run --profile eldenring.se --input-source event-tap
+.build/release/shockemu run --profile darktide.se --input-source event-tap
 ```
 
 macOS will request Input Monitoring access through its supported permission API. The event tap exists only while the streaming window is active. Grant access only if you choose this mode.
@@ -191,7 +191,7 @@ Before calling a build complete on this machine, confirm:
 
 1. The prepared copy signs in, connects to the PS5, and streams with SIP enabled.
 2. `only_keyboard.se` works, including `shift = O`.
-3. `eldenring.se` supports WASD, mouse buttons, and smooth mouse-look.
+3. `darktide.se` supports WASD, mouse buttons, and smooth mouse-look.
 4. Changing focus immediately returns the controller to neutral.
 5. Event-tap mode works only after explicit Input Monitoring approval, if it is needed.
 6. `shockemu clean` removes only ShockEmu-owned artifacts.
