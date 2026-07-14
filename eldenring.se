@@ -5,33 +5,33 @@ s = leftY+
 d = leftX+
 
 space = X
-j = square
-i = triangle
-shift = O
+r = square
+tab = triangle
+c = O
+shift = L3
+escape = options
 
-leftMouse = R1 # R2
-rightMouse = R2 # L1
+leftMouse = R2
+rightMouse = L2
+middleMouse = R3
 
-l = L1 # forward button on side of logi mouse, what is name?
-k = L2 # back button on logi mouse
+t = L1
+g = R1
 
-v = R3 # lock on 
-c = L3 # crouch
-
-up = dpadUp
-left = dpadLeft
-right = dpadRight
-down = dpadDown
+f = dpadUp
+q = dpadLeft
+e = dpadRight
+v = dpadDown
 
 p = PS
-t = touchpad
-
-# escape = O
 
 # Map mouse to the right stick
 mouseLook.type = linear # 1:1 translation mode, no curve
 mouseLook.stick = right
-mouseLook.multY = -1 # Flips the Y axis for mouseLook
-mouseLook.deadZone = .05 # Sets the dead zone for the joystick
+mouseLook.sensitivity = .075 # Quarter-strength base response; tune final speed in game
+mouseLook.smoothing = .65 # Blends the current target with the prior tick
+mouseLook.multX = 2.25 # Strong horizontal boost for fast camera turns
+mouseLook.multY = 1.75 # Correct local-capture Y direction with a strong vertical boost
+mouseLook.minimumMagnitude = .25 # Start at quarter stick instead of saturating immediately
+mouseLook.deadZone = .02 # Preserve small mouse movements
 mouseLook.decay = 5 # What the joystick movement is divided by at each tick (probably does very little)
-
